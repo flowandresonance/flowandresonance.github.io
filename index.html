@@ -456,25 +456,86 @@
         </div>
     </section>
 
-    <section class="section community">
-        <div class="container">
-            <h2 data-aos="fade-up">Join Our Community</h2>
-            <p data-aos="fade-up" data-aos-delay="200">Be part of a growing community dedicated to authentic movement and emotional exploration. Sign up for our newsletter to receive updates, insights, and invitations to future events.</p>
-            <div class="social-links" data-aos="fade-up" data-aos-delay="300">
-                <a href="https://instagram.com/flowandresonance" class="instagram-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="instagram-icon">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                    <span>@flowandresonance</span>
-                </a>
-            </div>
-            <div class="signup-form" data-aos="fade-up" data-aos-delay="400" style="max-width: 600px; margin: 2rem auto;">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYFYPFwZ_HqxBLgc9a-Yfbj6L_gTA1ZZ0S96NJ9eyNHaAqkQ/viewform?embedded=true" width="640" height="603" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+<!-- Replace the existing community section with this updated version -->
+<section class="section community">
+    <div class="container">
+        <h2 data-aos="fade-up">Join Our Community</h2>
+        <p data-aos="fade-up" data-aos-delay="200">Be part of a growing community dedicated to authentic movement and emotional exploration. Connect with us on Instagram and sign up for updates to stay informed about our journey.</p>
+        
+        <div class="social-links" data-aos="fade-up" data-aos-delay="300">
+            <a href="https://instagram.com/flowandresonance" class="instagram-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="instagram-icon">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>@flowandresonance</span>
+            </a>
+        </div>
+
+        <div class="signup-form" data-aos="fade-up" data-aos-delay="400">
+            <div class="form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYFYPFwZ_HqxBLgc9a-Yfbj6L_gTA1ZZ0S96NJ9eyNHaAqkQ/viewform?embedded=true" width="100%" height="603" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
         </div>
-    </section>
+    </div>
+
+    <style>
+        .signup-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 1rem; /* Add padding for mobile */
+        }
+
+        .form-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Add this to prevent content overflow */
+        }
+
+        .form-container:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .form-container iframe {
+            width: 100% !important; /* Force iframe to be 100% width */
+            max-width: 100% !important; /* Ensure iframe doesn't exceed container */
+            border: none;
+            transition: height 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .signup-form {
+                max-width: 100%;
+                margin: 2rem 0; /* Reduce margin on mobile */
+            }
+
+            .form-container {
+                padding: 0.75rem; /* Reduce padding on mobile */
+                margin: 0 auto; /* Center the container */
+            }
+
+            .form-container iframe {
+                transform: scale(0.95); /* Slightly scale down the form on mobile */
+                transform-origin: top left;
+                margin: 0 auto;
+            }
+        }
+
+        /* Fix container width on mobile */
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    </style>
+</section>
 
     <section class="section professionals">
         <div class="container">
