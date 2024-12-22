@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flow & Resonance</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<head>        
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0'>
+        
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+        
+        <!-- External Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+        
+        <!-- Primary Meta Tags -->
+        <title>Flow & Resonance - Integrated Movement & Psychotherapy</title>
+        <meta name="description" content="Flow & Resonance integrates psychodynamic and somatic psychotherapy with embodied movement exploration to support the emergence of your authentic self. Through flowing with what naturally resonates, we create space for hidden aspects to emerge, be felt, and integrate.">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://flowandresonance.github.io">
+        <link rel="alternate" href="https://flowandresonance.github.io" hreflang="en-AU">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:locale" content="en_AU">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Flow & Resonance - Integrated Movement & Psychotherapy">
+        <meta property="og:description" content="Discover authentic self-expression through integrated movement and psychotherapy practices. Flow & Resonance combines psychodynamic psychotherapy with embodied movement to support your journey of self-discovery.">
+        <meta property="og:url" content="https://flowandresonance.github.io">
+        <meta property="og:image" content="/android-chrome-512x512.png">
+        <meta property="og:site_name" content="Flow & Resonance">
+        
+        <!-- JSON-LD markup -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "HealthAndBeautyBusiness",
+            "name": "Flow & Resonance",
+            "image": "/android-chrome-512x512.png",
+            "description": "Flow & Resonance integrates psychodynamic and somatic psychotherapy with embodied movement exploration to support the emergence of your authentic self.",
+            "url": "https://flowandresonance.github.io",
+            "founder": {
+                "@type": "Person",
+                "name": "David O'Donohue"
+            }
+        }
+        </script>
     <style>
         * {
             margin: 0;
@@ -319,7 +364,38 @@
                     <p>This practice integrates psychodynamic and somatic psychotherapy with embodied exploration to support the emergence of authentic self. Through flowing with what naturally resonates - whether in emotional expression or physical movement - we create space for hidden aspects to emerge, be felt, seen, acknowledged, and integrated.</p>
                 </div>
                 <div class="vision-image" data-aos="fade-left">
-                    <img src="/api/placeholder/600/400" alt="Vision representation">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="width: 100%; height: 100%;">
+                        <!-- Abstract flowing shapes representing integration -->
+                        <defs>
+                            <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#405DE6;stop-opacity:0.2"/>
+                                <stop offset="100%" style="stop-color:#E1306C;stop-opacity:0.2"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Flowing curves representing movement and integration -->
+                        <path d="M50,200 Q150,100 300,200 T550,200" fill="none" stroke="#405DE6" stroke-width="2" opacity="0.6">
+                            <animate attributeName="d" 
+                                    dur="10s" 
+                                    repeatCount="indefinite"
+                                    values="M50,200 Q150,100 300,200 T550,200;
+                                            M50,200 Q150,300 300,200 T550,200;
+                                            M50,200 Q150,100 300,200 T550,200"/>
+                        </path>
+                        <path d="M50,220 Q150,320 300,220 T550,220" fill="none" stroke="#833AB4" stroke-width="2" opacity="0.4">
+                            <animate attributeName="d" 
+                                    dur="8s" 
+                                    repeatCount="indefinite"
+                                    values="M50,220 Q150,320 300,220 T550,220;
+                                            M50,220 Q150,120 300,220 T550,220;
+                                            M50,220 Q150,320 300,220 T550,220"/>
+                        </path>
+                        <circle cx="300" cy="200" r="50" fill="url(#flow-gradient)">
+                            <animate attributeName="r"
+                                    dur="4s"
+                                    repeatCount="indefinite"
+                                    values="50;55;50"/>
+                        </circle>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -330,8 +406,51 @@
             <div class="accessibility-content">
                 <h2 data-aos="fade-up">Movement for Everyone</h2>
                 <p data-aos="fade-up" data-aos-delay="200">Our approach adapts to your unique needs, whether you're just beginning your movement journey, managing an injury, or exploring new possibilities in your established practice. Every movement, no matter how subtle, can lead to increased capacity and awareness.</p>
-                <div class="video-placeholder" data-aos="fade-up" data-aos-delay="400">
-                    <img src="/api/placeholder/800/400" alt="Movement demonstration">
+                <div class="video-placeholder demo-animation" data-aos="fade-up" data-aos-delay="400">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" style="width: 100%; height: 100%;">
+                        <!-- Background gradient -->
+                        <defs>
+                            <linearGradient id="movement-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f5f7fa"/>
+                                <stop offset="100%" style="stop-color:#e8ecf1"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="800" height="400" fill="url(#movement-gradient)"/>
+                        
+                        <!-- Animated figures representing different movement capabilities -->
+                        <g class="movement-figure" style="transform-origin: center;">
+                            <!-- Gentle movement representation -->
+                            <circle cx="200" cy="200" r="30" fill="#405DE6" opacity="0.2">
+                                <animate attributeName="r"
+                                        dur="3s"
+                                        repeatCount="indefinite"
+                                        values="30;35;30"/>
+                            </circle>
+                            
+                            <!-- Flow representation -->
+                            <path d="M300,200 Q400,150 500,200 T700,200" fill="none" stroke="#833AB4" stroke-width="2" opacity="0.4">
+                                <animate attributeName="d" 
+                                        dur="6s" 
+                                        repeatCount="indefinite"
+                                        values="M300,200 Q400,150 500,200 T700,200;
+                                                M300,200 Q400,250 500,200 T700,200;
+                                                M300,200 Q400,150 500,200 T700,200"/>
+                            </path>
+                            
+                            <!-- Progressive movement indication -->
+                            <circle cx="600" cy="200" r="25" fill="#E1306C" opacity="0.2">
+                                <animate attributeName="cy"
+                                        dur="4s"
+                                        repeatCount="indefinite"
+                                        values="200;190;200"/>
+                            </circle>
+                        </g>
+                        
+                        <!-- Text placeholder -->
+                        <text x="400" y="350" text-anchor="middle" fill="#2c3e50" font-size="14">
+                            Movement adapted to your journey
+                        </text>
+                    </svg>
                 </div>
             </div>
         </div>
