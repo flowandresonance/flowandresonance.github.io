@@ -515,7 +515,7 @@ body {
         <h2 data-aos="fade-up">For Practitioners</h2>
         
         <div class="practitioners-intro" data-aos="fade-up" data-aos-delay="200">
-            <p class="intro-text">We're building an inclusive community bringing together practitioners from diverse backgrounds to support authentic expression and freedom through movement and awareness. Our collaboration spans across:</p>
+            <p>We're building an inclusive community bringing together practitioners from diverse backgrounds to support authentic expression and freedom through movement and awareness. Our collaboration spans across:</p>
             
             <ul class="practice-categories">
                 <li>Psychotherapy and somatic therapy</li>
@@ -526,7 +526,7 @@ body {
                 <li>Other somatic and movement traditions</li>
             </ul>
             
-            <p class="closing-text">If you're interested in our integrated approach to supporting authentic expression and embodied freedom, we'd love to connect with you.</p>
+            <p>If you're interested in our integrated approach to supporting authentic expression and embodied freedom, we'd love to connect with you.</p>
         </div>
 
         <p data-aos="fade-up" data-aos-delay="250">Our vision is to create a space where diverse modalities come together to support true freedom - the freedom to feel all feelings, to embody all parts of ourselves, and to move in ways that authentically express who we are. When we create safe spaces for this exploration, we invite both practitioners and clients to discover new dimensions of embodied awareness and self-expression.</p>
@@ -550,6 +550,45 @@ body {
         </div>
     </div>
 </section>
+
+<style>
+.practitioners-intro {
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.practice-categories {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.practice-categories li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.practice-categories li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2c3e50;  /* Keep bullet points in heading color */
+}
+
+@media (max-width: 768px) {
+    .practitioners-intro {
+        padding: 0 1rem;
+    }
+    
+    .practice-categories li {
+        font-size: 1rem;
+    }
+}
+</style>
 
 <style>
 .practitioners-intro {
