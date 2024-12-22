@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow & Resonance</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #34495e;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Vision Section */
+        .vision {
+            background: #fff;
+        }
+
+        .vision-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .vision-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .vision-image {
+            background: #f5f7fa;
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Accessibility Section */
+        .accessibility {
+            background: #f8f9fa;
+        }
+
+        .accessibility-content {
+            text-align: center;
+        }
+
+        .accessibility h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .video-placeholder {
+            background: #e8ecf1;
+            height: 400px;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Community Section */
+        .community {
+            background: #fff;
+            text-align: center;
+        }
+
+        .community h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .signup-form {
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 2px solid #e8ecf1;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .button {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #34495e;
+        }
+
+        /* Professionals Section */
+        .professionals {
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .professionals h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            .vision-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="section hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Flow & Resonance</h1>
+            <p data-aos="fade-up" data-aos-delay="200">When we allow ourselves to move naturally and feel deeply, something profound emerges. A space where physical expression meets emotional understanding, and where authentic patterns of being can develop through the wisdom of both body and mind.</p>
+        </div>
+    </section>
+
+    <section class="section vision">
+        <div class="container">
+            <div class="vision-content">
+                <div class="vision-text" data-aos="fade-right">
+                    <h2>Our Vision</h2>
+                    <p>This practice integrates psychodynamic and somatic psychotherapy with embodied exploration to support the emergence of authentic self. Through flowing with what naturally resonates - whether in emotional expression or physical movement - we create space for hidden aspects to emerge, be felt, seen, acknowledged, and integrated.</p>
+                </div>
+                <div class="vision-image" data-aos="fade-left">
+                    <img src="/api/placeholder/600/400" alt="Vision representation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section accessibility">
+        <div class="container">
+            <div class="accessibility-content">
+                <h2 data-aos="fade-up">Movement for Everyone</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Our approach adapts to your unique needs, whether you're just beginning your movement journey, managing an injury, or exploring new possibilities in your established practice. Every movement, no matter how subtle, can lead to increased capacity and awareness.</p>
+                <div class="video-placeholder" data-aos="fade-up" data-aos-delay="400">
+                    <img src="/api/placeholder/800/400" alt="Movement demonstration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section community">
+        <div class="container">
+            <h2 data-aos="fade-up">Join Our Community</h2>
+            <p data-aos="fade-up" data-aos-delay="200">Be part of a growing community dedicated to authentic movement and emotional exploration. Sign up for our newsletter to receive updates, insights, and invitations to future events.</p>
+            <form class="signup-form" data-aos="fade-up" data-aos-delay="400">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="button">Join the Journey</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="section professionals">
+        <div class="container">
+            <h2 data-aos="fade-up">For Movement Practitioners & Psychologists</h2>
+            <p data-aos="fade-up" data-aos-delay="200">We're building something special. If you're a movement practitioner or psychologist interested in joining our integrated approach, we'd love to hear from you.</p>
+            <button class="button" data-aos="fade-up" data-aos-delay="400">Connect With Us</button>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
+</body>
+</html>
