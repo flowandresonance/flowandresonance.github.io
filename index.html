@@ -158,6 +158,132 @@
             color: #2c3e50;
         }
 
+        .contact-section {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .email-button {
+            background: #2c3e50;
+        }
+
+        .email-button:hover {
+            background: #34495e;
+        }
+
+        .instagram-button {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            background-size: 200% 200%;
+        }
+
+        .instagram-button:hover {
+            background-position: right center;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .contact-button {
+                justify-content: center;
+            }
+        }
+
+        /* Social Media Styling */
+        .social-links {
+            margin: 2rem 0;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            background-size: 200% 200%;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .instagram-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #FD1D1D, #405DE6, #5851DB, #833AB4, #C13584, #E1306C);
+            background-size: 200% 200%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .instagram-link:hover::before {
+            opacity: 1;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        .instagram-link span,
+        .instagram-link svg {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .instagram-link:hover {
+            transform: scale(1.02);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(225, 48, 108, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(225, 48, 108, 0);
+            }
+        }
+
+        .instagram-icon {
+            margin-right: 0.8rem;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .vision-content {
                 grid-template-columns: 1fr;
@@ -215,10 +341,19 @@
         <div class="container">
             <h2 data-aos="fade-up">Join Our Community</h2>
             <p data-aos="fade-up" data-aos-delay="200">Be part of a growing community dedicated to authentic movement and emotional exploration. Sign up for our newsletter to receive updates, insights, and invitations to future events.</p>
-            <form class="signup-form" data-aos="fade-up" data-aos-delay="400">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit" class="button">Join the Journey</button>
-            </form>
+            <div class="social-links" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://instagram.com/flowandresonance" class="instagram-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="instagram-icon">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <span>@flowandresonance</span>
+                </a>
+            </div>
+            <div class="signup-form" data-aos="fade-up" data-aos-delay="400" style="max-width: 600px; margin: 2rem auto;">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYFYPFwZ_HqxBLgc9a-Yfbj6L_gTA1ZZ0S96NJ9eyNHaAqkQ/viewform?embedded=true" width="640" height="603" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
         </div>
     </section>
 
@@ -226,7 +361,23 @@
         <div class="container">
             <h2 data-aos="fade-up">For Movement Practitioners & Psychologists</h2>
             <p data-aos="fade-up" data-aos-delay="200">We're building something special. If you're a movement practitioner or psychologist interested in joining our integrated approach, we'd love to hear from you.</p>
-            <button class="button" data-aos="fade-up" data-aos-delay="400">Connect With Us</button>
+            <div class="contact-section" data-aos="fade-up" data-aos-delay="300">
+                <a href="mailto:flowandresonance@gmail.com?subject=Professional%20Interest%20in%20Flow%20and%20Resonance" class="contact-button email-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>Email Us</span>
+                </a>
+                <a href="https://instagram.com/flowandresonance" class="contact-button instagram-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <span>Follow Us</span>
+                </a>
+            </div>
         </div>
     </section>
 
