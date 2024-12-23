@@ -65,6 +65,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Base Layout */
 .section {
     padding: 5rem 2rem;
     min-height: 100vh;
@@ -76,6 +77,13 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    text-align: center;
 }
 
 /* Hero Section */
@@ -90,11 +98,12 @@ body {
     color: #2c3e50;
 }
 
-.hero p {
+.hero-text {
     font-size: 1.5rem;
     color: #34495e;
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
 }
 
 /* Vision Section */
@@ -107,6 +116,12 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vision-text {
+    text-align: left;
 }
 
 .vision-text h2 {
@@ -124,19 +139,17 @@ body {
     justify-content: center;
 }
 
-/* Accessibility Section */
-.accessibility {
-    background: #f8f9fa;
+/* Movement Section */
+.movement-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.accessibility-content {
-    text-align: center;
-}
-
-.accessibility h2 {
-    font-size: 2.5rem;
+.movement-text {
+    text-align: left;
     margin-bottom: 2rem;
-    color: #2c3e50;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .video-placeholder {
@@ -153,13 +166,16 @@ body {
 /* Community Section */
 .community {
     background: #fff;
-    text-align: center;
 }
 
-.community h2 {
-    font-size: 2.5rem;
+.community-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.community-intro {
+    text-align: center;
     margin-bottom: 2rem;
-    color: #2c3e50;
 }
 
 .signup-form {
@@ -168,31 +184,6 @@ body {
     padding: 0 1rem;
 }
 
-.signup-form input {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 2px solid #e8ecf1;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.button {
-    background: #2c3e50;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.button:hover {
-    background: #34495e;
-}
-
-/* Form Container Styles */
 .form-container {
     background: white;
     padding: 1.5rem;
@@ -216,16 +207,44 @@ body {
 /* Professionals Section */
 .professionals {
     background: #f8f9fa;
-    text-align: center;
 }
 
-.professionals h2 {
-    font-size: 2.5rem;
+.professionals-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-block {
+    text-align: left;
     margin-bottom: 2rem;
+}
+
+.text-block p {
+    margin-bottom: 1.5rem;
+}
+
+.practice-categories {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.practice-categories li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.practice-categories li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
     color: #2c3e50;
 }
 
-/* Contact and Social Button Styles */
+/* Contact and Social Buttons */
 .contact-section {
     display: flex;
     gap: 1rem;
@@ -266,88 +285,30 @@ body {
     background-position: right center;
 }
 
-.instagram-icon {
-    margin-right: 0.8rem;
-}
-
-.hero-text {
-    font-size: 1.5rem;
-    color: #34495e;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.vision-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.vision-text {
-    text-align: left;
-}
-
-.vision-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
-}
-
-.movement-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.section-heading {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #2c3e50;
-    text-align: center;
-}
-
-.movement-text {
-    text-align: left;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-    .vision-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .hero-text {
-        font-size: 1.2rem;
-        padding: 0 1rem;
-    }
-    
-    .movement-content {
-        padding: 0 1rem;
-    }
-}
-
 /* Media Queries */
 @media (max-width: 768px) {
     .vision-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .hero h1 {
         font-size: 2.5rem;
     }
 
-    .hero p {
+    .hero-text {
         font-size: 1.2rem;
+        padding: 0 1rem;
     }
 
     .section {
         padding: 3rem 1rem;
+    }
+
+    .movement-content,
+    .professionals-content,
+    .community-content {
+        padding: 0 1rem;
     }
 
     .contact-section {
@@ -372,7 +333,11 @@ body {
     }
 
     .contact-button, .instagram-button-base {
-        width: 100%;  /* Make both buttons take full width */
+        width: 100%;
+    }
+
+    .practice-categories li {
+        font-size: 1rem;
     }
 }
 
@@ -382,7 +347,7 @@ body {
         padding-right: 1rem;
     }
 }
-        </style>
+</style>
 </head>
 <body>
     <section class="section hero">
@@ -564,231 +529,6 @@ body {
         </div>
     </div>
 </section>
-
-    <style>
-        .signup-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 0 1rem; /* Add padding for mobile */
-        }
-
-        .form-container {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Add this to prevent content overflow */
-        }
-
-        .form-container:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        .form-container iframe {
-            width: 100% !important; /* Force iframe to be 100% width */
-            max-width: 100% !important; /* Ensure iframe doesn't exceed container */
-            border: none;
-            transition: height 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .signup-form {
-                max-width: 100%;
-                margin: 2rem 0; /* Reduce margin on mobile */
-            }
-
-            .form-container {
-                padding: 0.75rem; /* Reduce padding on mobile */
-                margin: 0 auto; /* Center the container */
-            }
-
-            .form-container iframe {
-                transform: scale(0.95); /* Slightly scale down the form on mobile */
-                transform-origin: top left;
-                margin: 0 auto;
-            }
-        }
-
-        /* Fix container width on mobile */
-        @media (max-width: 640px) {
-            .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-        }
-.section-heading {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #2c3e50;
-    text-align: center;
-}
-
-/* Community Section */
-.community-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.community-intro {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-/* Professionals Section */
-.professionals-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.text-block {
-    text-align: left;
-    margin-bottom: 2rem;
-}
-
-.text-block p {
-    margin-bottom: 1.5rem;
-}
-
-.practice-categories {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
-}
-
-.practice-categories li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.practice-categories li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #2c3e50;
-}
-
-/* Contact and Social Buttons */
-.contact-section {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin: 3rem 0 1rem;
-}
-
-@media (max-width: 768px) {
-    .professionals-content, 
-    .community-content {
-        padding: 0 1rem;
-    }
-    
-    .practice-categories li {
-        font-size: 1rem;
-    }
-    
-    .contact-section {
-        flex-direction: column;
-        align-items: stretch;
-    }
-}
-    </style>
-
-<style>
-.section-heading {
-    text-align: center;
-}
-
-.professionals-content {
-    max-width: 800px;
-    margin: 2rem auto;
-    text-align: left;
-}
-
-.professionals-content p {
-    margin-bottom: 1.5rem;
-}
-
-.practice-categories {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
-}
-
-.practice-categories li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.practice-categories li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #2c3e50;
-}
-
-@media (max-width: 768px) {
-    .professionals-content {
-        padding: 0 1rem;
-    }
-    
-    .practice-categories li {
-        font-size: 1rem;
-    }
-}
-</style>
-
-<style>
-.practitioners-intro {
-    margin: 2rem 0;
-    text-align: left;
-}
-
-.intro-text, .closing-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #34495e;
-    margin-bottom: 1.5rem;
-}
-
-.practice-categories {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
-}
-
-.practice-categories li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-    color: #34495e;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    text-align: left;
-}
-
-.practice-categories li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #2c3e50;
-}
-
-@media (max-width: 768px) {
-    .practitioners-intro {
-        padding: 0 1rem;
-    }
-    
-    .intro-text, .closing-text, .practice-categories li {
-        font-size: 1rem;
-    }
-}
-</style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({
