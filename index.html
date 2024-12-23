@@ -316,6 +316,20 @@ body {
     position: relative;
 }
 
+.nav__toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.nav__toggle:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
 /* 7. Sections
    ========================================================================== */
 /* Hero Section */
@@ -518,8 +532,40 @@ body {
     }
 
     /* Navigation */
+    .nav__toggle {
+        display: block;
+    }
+
     .nav__links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: var(--shadow-md);
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav__links.active {
+        display: flex;
+    }
+
+    .nav__links li {
+        width: 100%;
+    }
+
+    .nav__links a {
+        display: block;
+        padding: 0.75rem 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav__links a:hover {
+        background: var(--color-background-alt);
     }
 
     /* Hero */
@@ -555,17 +601,28 @@ body {
 <body>
     <!-- Navigation -->
     <nav class="nav" id="main-nav">
-        <div class="container nav__container">
-            <a href="#hero" class="nav__logo">Flow & Resonance</a>
-            <ul class="nav__links">
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#possibilities">Possibilities</a></li>
-                <li><a href="#approach">Approach</a></li>
-                <li><a href="#community">Community</a></li>
-                <li><a href="#practitioners">Practitioners</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="container nav__container">
+        <a href="#hero" class="nav__logo">Flow & Resonance</a>
+        
+        <!-- Mobile Menu Button -->
+        <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav__toggle-icon">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <!-- Navigation Links -->
+        <ul class="nav__links">
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#possibilities">Possibilities</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#practitioners">Practitioners</a></li>
+        </ul>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
@@ -843,6 +900,32 @@ body {
             }
 
             window.addEventListener('scroll', updateProgress);
+
+const navToggle = document.querySelector('.nav__toggle');
+    const navLinks = document.querySelector('.nav__links');
+
+    navToggle.addEventListener('click', function() {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navLinks.classList.toggle('active');
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function closeMenu(e) {
+            if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.removeEventListener('click', closeMenu);
+            }
+        });
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
         });
     </script>
 </body>
