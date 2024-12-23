@@ -270,6 +270,68 @@ body {
     margin-right: 0.8rem;
 }
 
+.hero-text {
+    font-size: 1.5rem;
+    color: #34495e;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.vision-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vision-text {
+    text-align: left;
+}
+
+.vision-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.movement-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.movement-text {
+    text-align: left;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .vision-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .hero-text {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+    }
+    
+    .movement-content {
+        padding: 0 1rem;
+    }
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     .vision-content {
@@ -324,20 +386,20 @@ body {
 </head>
 <body>
     <section class="section hero">
-        <div class="container">
-            <h1 data-aos="fade-up">Flow & Resonance</h1>
-            <p data-aos="fade-up" data-aos-delay="200">When we allow ourselves to move naturally and feel deeply, something profound emerges. A space where physical expression meets emotional understanding, and where authentic patterns of being can develop through the wisdom of both body and mind.</p>
-        </div>
-    </section>
+    <div class="container">
+        <h1 data-aos="fade-up">Flow & Resonance</h1>
+        <p data-aos="fade-up" data-aos-delay="200" class="hero-text">When we allow ourselves to move naturally and feel deeply, something profound emerges. A space where physical expression meets emotional understanding, and where authentic patterns of being can develop through the wisdom of both body and mind.</p>
+    </div>
+</section>
 
-    <section class="section vision">
-        <div class="container">
-            <div class="vision-content">
-                <div class="vision-text" data-aos="fade-right">
-                    <h2>Our Vision</h2>
-                    <p>This practice integrates psychodynamic and somatic psychotherapy with embodied movement exploration to support the emergence of authentic self. Through flowing with what naturally resonates - whether in emotional expression or physical movement - we create space for hidden aspects to emerge, be felt, acknowledged, and integrated.</p>
-                </div>
-                <div class="vision-image" data-aos="fade-left">
+<section class="section vision">
+    <div class="container">
+        <div class="vision-content">
+            <div class="vision-text" data-aos="fade-right">
+                <h2>Our Vision</h2>
+                <p>This practice integrates psychodynamic and somatic psychotherapy with embodied movement exploration to support the emergence of authentic self. Through flowing with what naturally resonates - whether in emotional expression or physical movement - we create space for hidden aspects to emerge, be felt, acknowledged, and integrated.</p>
+            </div>
+            <div class="vision-image" data-aos="fade-in" data-aos-delay="200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="width: 100%; height: 100%;">
                         <!-- Abstract flowing shapes representing integration -->
                         <defs>
@@ -375,13 +437,13 @@ body {
         </div>
     </section>
 
-    <section class="section accessibility">
-        <div class="container">
-            <div class="accessibility-content">
-                <h2 data-aos="fade-up">Movement for Everyone</h2>
-                <p data-aos="fade-up" data-aos-delay="200">Our approach adapts to your unique needs, whether you're just beginning your movement journey, managing an injury, or exploring new possibilities in your established practice. Every movement, no matter how subtle, can lead to increased capacity and awareness.</p>
-                <div class="video-placeholder demo-animation" data-aos="fade-up" data-aos-delay="400">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" style="width: 100%; height: 100%;">
+    <section class="section movement">
+    <div class="container">
+        <h2 class="section-heading" data-aos="fade-up">Movement for Everyone</h2>
+        <div class="movement-content">
+            <p class="movement-text" data-aos="fade-right" data-aos-delay="200">Our approach adapts to your unique needs, whether you're just beginning your movement journey, managing an injury, or exploring new possibilities in your established practice. Every movement, no matter how subtle, can lead to increased capacity and awareness.</p>
+            <div class="video-placeholder demo-animation" data-aos="fade-up" data-aos-delay="400">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" style="width: 100%; height: 100%;">
                         <!-- Background gradient -->
                         <defs>
                             <linearGradient id="movement-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
