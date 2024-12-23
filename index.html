@@ -617,6 +617,83 @@ body {
                 padding-right: 1rem;
             }
         }
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Community Section */
+.community-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.community-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Professionals Section */
+.professionals-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-block {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.text-block p {
+    margin-bottom: 1.5rem;
+}
+
+.practice-categories {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.practice-categories li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.practice-categories li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2c3e50;
+}
+
+/* Contact and Social Buttons */
+.contact-section {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 3rem 0 1rem;
+}
+
+@media (max-width: 768px) {
+    .professionals-content, 
+    .community-content {
+        padding: 0 1rem;
+    }
+    
+    .practice-categories li {
+        font-size: 1rem;
+    }
+    
+    .contact-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
     </style>
 
 <style>
