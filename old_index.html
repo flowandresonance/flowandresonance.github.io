@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>        
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0'>
+        
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+        
+        <!-- External Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+        
+        <!-- Primary Meta Tags -->
+        <title>Flow & Resonance - Integrated Movement & Psychotherapy</title>
+        <meta name="description" content="Flow & Resonance integrates psychodynamic and somatic psychotherapy with embodied movement exploration to support the emergence of your authentic self. Through flowing with what naturally resonates, we create space for hidden aspects to emerge, be felt, and integrate.">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://flowandresonance.github.io">
+        <link rel="alternate" href="https://flowandresonance.github.io" hreflang="en-AU">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:locale" content="en_AU">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Flow & Resonance - Integrated Movement & Psychotherapy">
+        <meta property="og:description" content="Discover authentic self-expression through integrated movement and psychotherapy practices. Flow & Resonance combines psychodynamic psychotherapy with embodied movement to support your journey of self-discovery.">
+        <meta property="og:url" content="https://flowandresonance.github.io">
+        <meta property="og:image" content="/android-chrome-512x512.png">
+        <meta property="og:site_name" content="Flow & Resonance">
+        
+        <!-- JSON-LD markup -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "HealthAndBeautyBusiness",
+            "name": "Flow & Resonance",
+            "image": "/android-chrome-512x512.png",
+            "description": "Flow & Resonance integrates psychodynamic and somatic psychotherapy with embodied movement exploration to support the emergence of your authentic self.",
+            "url": "https://flowandresonance.github.io",
+            "founder": {
+                "@type": "Person",
+                "name": "David O'Donohue"
+            }
+        }
+        </script>
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Base Layout */
+.section {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2C3E50;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #2C3E50 0%, #6B4984 30%, #B8719A 70%, #DBA834 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(64, 93, 230, 0.05), rgba(225, 48, 108, 0.05));
+    pointer-events: none;
+}
+
+.hero-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero a {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text {
+        font-size: 1.25rem;
+        padding: 0 1rem;
+    }
+
+}
+/* Base AOS animations setup */
+[data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* Fade up animation - consistent base animation */
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+}
+
+/* Fade right animation */
+[data-aos="fade-right"] {
+    transform: translateX(-30px);
+}
+
+[data-aos="fade-right"].aos-animate {
+    transform: translateX(0);
+}
+
+/* Fade left animation */
+[data-aos="fade-left"] {
+    transform: translateX(30px);
+}
+
+[data-aos="fade-left"].aos-animate {
+    transform: translateX(0);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+}
+
+.hero-text {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+}
+
+.primary-button, .secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    min-width: 200px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-button {
+    background: #614385;
+    color: white;
+    box-shadow: 0 4px 6px rgba(97, 67, 133, 0.2); /* Adjusted shadow color */
+}
+
+.primary-button:hover {
+    background: #523672;
+    box-shadow: 0 6px 12px rgba(97, 67, 133, 0.3);
+}
+
+.secondary-button {
+    background: transparent;
+    color: #614385;
+    border: 2px solid #614385;
+}
+
+.secondary-button:hover {
+    background: rgba(97, 67, 133, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .primary-button, .secondary-button {
+        width: 100%;
+    }
+}
+
+/* Vision Section */
+.vision {
+    background: #fff;
+}
+
+.vision h2 {
+    background: linear-gradient(135deg, #2C3E50 0%, #614385 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vision-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vision-text {
+    text-align: left;
+}
+
+.vision-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #614385;
+}
+
+.vision-text p {
+    color: #4A4A4A; /* A softer dark gray that complements our palette */
+}
+
+.vision-image {
+    background: #f5f7fa;
+    height: 400px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Movement Section */
+
+.movement {
+    background: #f8f9fa;
+}
+
+.movement-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.movement-text {
+    text-align: left;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4A4A4A;
+}
+
+.video-placeholder {
+    background: #e8ecf1;
+    height: 400px;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-placeholder text {
+    fill: #614385; /* For the SVG text */
+}
+
+/* Community Section */
+.community {
+    background: #fff;
+}
+
+.community-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.community-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #4A4A4A;
+}
+
+.signup-form {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.form-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-container:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.form-container iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    border: none;
+    transition: height 0.3s ease;
+}
+
+/* Professionals Section */
+.professionals {
+    background: #f8f9fa;
+}
+
+.professionals-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;  /* Added this */
+}
+
+.text-block {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+
+.text-block {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.text-block p {
+    margin-bottom: 1.5rem;
+    color: #4A4A4A;
+}
+
+.practice-categories {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.practice-categories li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4A4A4A;
+}
+
+.practice-categories li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #614385;
+}
+
+/* Contact and Social Buttons */
+.contact-section {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.contact-button, .instagram-button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.email-button {
+    background: #2c3e50;
+}
+
+.email-button:hover {
+    background: #34495e;
+}
+
+.social-links {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.instagram-button-base {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    background-size: 200% 200%;
+}
+
+.instagram-button-base:hover {
+    background-position: right center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .vision-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .movement-content,
+    .professionals-content,
+    .community-content {
+        padding: 0 1rem;
+    }
+
+    .contact-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .signup-form {
+        max-width: 100%;
+        margin: 2rem 0;
+    }
+
+    .form-container {
+        margin: 0 auto;
+    }
+
+    .form-container iframe {
+        transform: scale(0.95);
+        transform-origin: top left;
+        margin: 0 auto;
+    }
+
+    .contact-button, .instagram-button-base {
+        width: 100%;
+    }
+
+    .practice-categories li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+</style>
+</head>
+<body>
+    <section class="section hero" aria-labelledby="hero-title">
+        <div class="container">
+            <div class="hero-content-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                <h1 id="hero-title">Flow & Resonance</h1>
+                <p class="hero-text" data-aos="fade-up" data-aos-delay="200">
+                    When we allow ourselves to move naturally and feel deeply, something profound emerges. A space where physical expression meets emotional understanding, and where authentic patterns of being can develop through the wisdom of both body and mind.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section vision">
+        <div class="container">
+            <div class="vision-content">
+                <div class="vision-text" data-aos="fade-right" data-aos-duration="800">
+                    <h2>Our Vision</h2>
+                    <p>This practice integrates psychodynamic and somatic psychotherapy with embodied movement exploration to support the emergence of authentic self. Through flowing with what naturally resonates - whether in emotional expression or physical movement - we create space for hidden aspects to emerge, be felt, acknowledged, and integrated.</p>
+                </div>
+                <div class="vision-image" data-aos="fade-left" data-aos-duration="800">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="width: 100%; height: 100%;">
+                        <defs>
+                            <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#405DE6;stop-opacity:0.2"/>
+                                <stop offset="100%" style="stop-color:#E1306C;stop-opacity:0.2"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M50,200 Q150,100 300,200 T550,200" fill="none" stroke="#405DE6" stroke-width="2" opacity="0.6">
+                            <animate attributeName="d" 
+                                dur="10s" 
+                                repeatCount="indefinite"
+                                values="M50,200 Q150,100 300,200 T550,200;
+                                        M50,200 Q150,300 300,200 T550,200;
+                                        M50,200 Q150,100 300,200 T550,200"/>
+                        </path>
+                        <path d="M50,220 Q150,320 300,220 T550,220" fill="none" stroke="#833AB4" stroke-width="2" opacity="0.4">
+                            <animate attributeName="d" 
+                                dur="8s" 
+                                repeatCount="indefinite"
+                                values="M50,220 Q150,320 300,220 T550,220;
+                                        M50,220 Q150,120 300,220 T550,220;
+                                        M50,220 Q150,320 300,220 T550,220"/>
+                        </path>
+                        <circle cx="300" cy="200" r="50" fill="url(#flow-gradient)">
+                            <animate attributeName="r"
+                                dur="4s"
+                                repeatCount="indefinite"
+                                values="50;55;50"/>
+                        </circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section movement">
+        <div class="container">
+            <h2 class="section-heading" data-aos="fade-up">Movement for Everyone</h2>
+            <div class="movement-content">
+                <p class="movement-text" data-aos="fade-up" data-aos-duration="800">Our approach adapts to your unique needs, whether you're just beginning your movement journey, managing an injury, or exploring new possibilities in your established practice. Every movement, no matter how subtle, can lead to increased capacity and awareness.</p>
+                <div class="video-placeholder" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" style="width: 100%; height: 100%;">
+                        <defs>
+                            <linearGradient id="movement-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f5f7fa"/>
+                                <stop offset="100%" style="stop-color:#e8ecf1"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="800" height="400" fill="url(#movement-gradient)"/>
+                        <g class="movement-figure" style="transform-origin: center;">
+                            <circle cx="200" cy="200" r="30" fill="#405DE6" opacity="0.2">
+                                <animate attributeName="r"
+                                    dur="3s"
+                                    repeatCount="indefinite"
+                                    values="30;35;30"/>
+                            </circle>
+                            <path d="M300,200 Q400,150 500,200 T700,200" fill="none" stroke="#833AB4" stroke-width="2" opacity="0.4">
+                                <animate attributeName="d" 
+                                    dur="6s" 
+                                    repeatCount="indefinite"
+                                    values="M300,200 Q400,150 500,200 T700,200;
+                                            M300,200 Q400,250 500,200 T700,200;
+                                            M300,200 Q400,150 500,200 T700,200"/>
+                            </path>
+                            <circle cx="600" cy="200" r="25" fill="#E1306C" opacity="0.2">
+                                <animate attributeName="cy"
+                                    dur="4s"
+                                    repeatCount="indefinite"
+                                    values="200;190;200"/>
+                            </circle>
+                        </g>
+                        <text x="400" y="350" text-anchor="middle" fill="#2c3e50" font-size="14">
+                            Movement adapted to your journey
+                        </text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section community">
+        <div class="container">
+            <h2 class="section-heading" data-aos="fade-up">Join Our Community</h2>
+            <div class="community-content">
+                <p class="community-intro" data-aos="fade-up" data-aos-duration="800">Be part of a growing community dedicated to authentic movement and emotional exploration. Connect with us on Instagram and sign up for updates to stay informed about our journey.</p>
+                
+                <div class="social-links" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://instagram.com/flowandresonance" class="instagram-button-base">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span>@flowandresonance</span>
+                    </a>
+                </div>
+
+                <div class="signup-form" data-aos="fade-up" data-aos-delay="400">
+                    <div class="form-container">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYFYPFwZ_HqxBLgc9a-Yfbj6L_gTA1ZZ0S96NJ9eyNHaAqkQ/viewform?embedded=true" width="100%" height="603" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section professionals">
+        <div class="container">
+            <h2 class="section-heading" data-aos="fade-up">For Practitioners</h2>
+            
+            <div class="professionals-content">
+                <div class="text-block" data-aos="fade-right" data-aos-delay="200">
+                    <p>We're building an inclusive community bringing together practitioners from diverse backgrounds to support authentic expression and freedom through movement and awareness. Our collaboration spans across:</p>
+                    
+                    <ul class="practice-categories" data-aos="fade-right" data-aos-delay="250">
+                        <li>Psychotherapy and somatic therapy</li>
+                        <li>Movement and embodiment practices (yoga, dance, capoeira, martial arts)</li>
+                        <li>Body awareness and meditation practices (breathwork, qigong, tai chi)</li>
+                        <li>Athletic and acrobatic disciplines (gymnastics, acrobatics, parkour)</li>
+                        <li>Expressive and performing arts</li>
+                        <li>Contemplative and spiritual traditions (meditation, sufism, buddhism, taoism)</li>
+                        <li>Other somatic, reflective, or movement-based traditions</li>
+                    </ul>
+                    
+                    <p>If you're interested in our integrated approach to supporting authentic expression and embodied freedom, we'd love to connect with you.</p>
+                </div>
+
+                <div class="text-block" data-aos="fade-right" data-aos-delay="300">
+                    <p>Our vision is to create a space where diverse modalities come together to support true freedom - the freedom to feel all feelings, to embody all parts of ourselves, and to move in ways that authentically express who we are. When we create safe spaces for this exploration, we invite both practitioners and clients to discover new dimensions of embodied awareness and self-expression.</p>
+                </div>
+                
+                <div class="contact-section" data-aos="fade-up" data-aos-delay="350">
+                    <a href="mailto:flowandresonance@gmail.com?subject=Professional%20Interest%20in%20Flow%20and%20Resonance" class="contact-button email-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>Email Us</span>
+                    </a>
+                    <a href="https://instagram.com/flowandresonance" class="instagram-button-base">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span>Follow Us</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+        duration: 800,          // Slightly faster for better response
+        once: true,            // Only animate once
+        offset: 100,           // Start animations slightly earlier
+        easing: 'cubic-bezier(0.4, 0, 0.2, 1)',  // Consistent easing
+        anchorPlacement: 'top-bottom', // Consistent trigger point
+    });
+});
+    </script>
+</body>
+</html>
