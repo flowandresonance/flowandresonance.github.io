@@ -139,19 +139,44 @@ body {
         font-size: 1.25rem;
         padding: 0 1rem;
     }
+
+}
+/* Base AOS animations setup */
+[data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+[data-aos].aos-animate {
+    opacity: 1;
 }
 
+/* Fade up animation - consistent base animation */
 [data-aos="fade-up"] {
-    animation: fadeInUp 0.6s ease-out forwards;
+    transform: translateY(30px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+}
+
+/* Fade right animation */
+[data-aos="fade-right"] {
+    transform: translateX(-30px);
+}
+
+[data-aos="fade-right"].aos-animate {
+    transform: translateX(0);
+}
+
+/* Fade left animation */
+[data-aos="fade-left"] {
+    transform: translateX(30px);
+}
+
+[data-aos="fade-left"].aos-animate {
+    transform: translateX(0);
 }
 
 .hero h1 {
@@ -307,12 +332,10 @@ body {
 .signup-form {
     max-width: 600px;
     margin: 2rem auto;
-    padding: 0 1rem;
 }
 
 .form-container {
     background: white;
-    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -457,7 +480,6 @@ body {
     }
 
     .form-container {
-        padding: 0.75rem;
         margin: 0 auto;
     }
 
@@ -487,11 +509,9 @@ body {
 <body>
     <section class="section hero" aria-labelledby="hero-title">
         <div class="container">
-            <div class="hero-content-wrapper">
-                <h1 id="hero-title" data-aos="fade-up">
-                    Flow & Resonance
-                </h1>
-                <p data-aos="fade-up" data-aos-delay="200" class="hero-text">
+            <div class="hero-content-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                <h1 id="hero-title">Flow & Resonance</h1>
+                <p class="hero-text" data-aos="fade-up" data-aos-delay="200">
                     When we allow ourselves to move naturally and feel deeply, something profound emerges. A space where physical expression meets emotional understanding, and where authentic patterns of being can develop through the wisdom of both body and mind.
                 </p>
             </div>
@@ -501,11 +521,11 @@ body {
     <section class="section vision">
         <div class="container">
             <div class="vision-content">
-                <div class="vision-text" data-aos="fade-right">
+                <div class="vision-text" data-aos="fade-right" data-aos-duration="800">
                     <h2>Our Vision</h2>
                     <p>This practice integrates psychodynamic and somatic psychotherapy with embodied movement exploration to support the emergence of authentic self. Through flowing with what naturally resonates - whether in emotional expression or physical movement - we create space for hidden aspects to emerge, be felt, acknowledged, and integrated.</p>
                 </div>
-                <div class="vision-image" data-aos="fade-in" data-aos-delay="200">
+                <div class="vision-image" data-aos="fade-left" data-aos-duration="800">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="width: 100%; height: 100%;">
                         <defs>
                             <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -545,8 +565,8 @@ body {
         <div class="container">
             <h2 class="section-heading" data-aos="fade-up">Movement for Everyone</h2>
             <div class="movement-content">
-                <p class="movement-text" data-aos="fade-right" data-aos-delay="200">Our approach adapts to your unique needs, whether you're just beginning your movement journey, managing an injury, or exploring new possibilities in your established practice. Every movement, no matter how subtle, can lead to increased capacity and awareness.</p>
-                <div class="video-placeholder demo-animation" data-aos="fade-up" data-aos-delay="400">
+                <p class="movement-text" data-aos="fade-up" data-aos-duration="800">Our approach adapts to your unique needs, whether you're just beginning your movement journey, managing an injury, or exploring new possibilities in your established practice. Every movement, no matter how subtle, can lead to increased capacity and awareness.</p>
+                <div class="video-placeholder" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" style="width: 100%; height: 100%;">
                         <defs>
                             <linearGradient id="movement-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -590,9 +610,9 @@ body {
         <div class="container">
             <h2 class="section-heading" data-aos="fade-up">Join Our Community</h2>
             <div class="community-content">
-                <p class="community-intro" data-aos="fade-up" data-aos-delay="200">Be part of a growing community dedicated to authentic movement and emotional exploration. Connect with us on Instagram and sign up for updates to stay informed about our journey.</p>
+                <p class="community-intro" data-aos="fade-up" data-aos-duration="800">Be part of a growing community dedicated to authentic movement and emotional exploration. Connect with us on Instagram and sign up for updates to stay informed about our journey.</p>
                 
-                <div class="social-links" data-aos="fade-up" data-aos-delay="300">
+                <div class="social-links" data-aos="fade-up" data-aos-delay="200">
                     <a href="https://instagram.com/flowandresonance" class="instagram-button-base">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -626,7 +646,8 @@ body {
                         <li>Body awareness and meditation practices (breathwork, qigong, tai chi)</li>
                         <li>Athletic and acrobatic disciplines (gymnastics, acrobatics, parkour)</li>
                         <li>Expressive and performing arts</li>
-                        <li>Other somatic and movement traditions</li>
+                        <li>Contemplative and spiritual traditions (meditation, sufism, buddhism, taoism)</li>
+                        <li>Other somatic, reflective, or movement-based traditions</li>
                     </ul>
                     
                     <p>If you're interested in our integrated approach to supporting authentic expression and embodied freedom, we'd love to connect with you.</p>
@@ -658,13 +679,16 @@ body {
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 1000,
-                once: true,
-                offset: 100
-            });
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+        duration: 800,          // Slightly faster for better response
+        once: true,            // Only animate once
+        offset: 100,           // Start animations slightly earlier
+        easing: 'cubic-bezier(0.4, 0, 0.2, 1)',  // Consistent easing
+        anchorPlacement: 'top-bottom', // Consistent trigger point
+        disable: window.innerWidth < 768 ? true : false // Optional: disable on mobile
+    });
+});
     </script>
 </body>
 </html>
