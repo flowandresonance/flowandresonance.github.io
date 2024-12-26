@@ -1,456 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flexible Psyche | Canberra Psychologist</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-:root {
-    --primary: #115e59;
-    --primary-light: #99f6e4;
-    --text: #334155;
-    --background: #f8fafc;
-    --white: #ffffff;
-}
+        :root {
+            --color-primary: #2874A6;
+            --color-background: rgba(174, 214, 241, 0.5);
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lora', serif;
+        }
 
-body {
-    font-family: 'Lora', serif;
-    line-height: 1.6;
-    color: var(--text);
-    background: var(--background);
-    overflow-x: hidden;
-}
+        body {
+            overflow-x: hidden;
+            background-image: linear-gradient(var(--color-background), var(--color-background)), url("./assets/shallows.webp");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
 
-/* Navigation */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--color-primary);
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        /* Header/Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
 
-.nav-logo {
-    font-family: 'Lora', serif;
-    color: var(--primary);
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
+        .nav-logo {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
 
-.nav-links a {
-    color: var(--text);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
 
-.nav-links a:hover {
-    color: var(--primary);
-}
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--primary);
-    cursor: pointer;
-}
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
 
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(to bottom, #f0fdfa, var(--white));
-    padding: 2rem;
-    margin-top: -60px; /* Adjust for fixed navbar */
-}
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
 
-.hero-content {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 4rem;
+        }
 
-.hero-content.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
 
-.hero h1 {
-    font-family: 'Lora', serif;
-    font-size: 3.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
+        .hero-content p {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
 
-.hero p {
-    font-size: 1.5rem;
-    color: var(--text);
-    margin-bottom: 2rem;
-}
+        /* About Content */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-/* About Section */
-.about {
-    padding: 6rem 2rem;
-    background: var(--white);
-}
+        .about-content ul {
+            margin-left: 2rem;
+            margin-top: 1rem;
+        }
 
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
+        .about-content li {
+            margin-bottom: 0.5rem;
+        }
 
-.profile-img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center 30%; /* This will move the face to the center */
-    margin: 0 auto 3rem;
-    display: block;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+        .about-content h3 {
+            color: var(--color-primary);
+            margin-top: 1rem;
+        }
 
-a {
-    color: var(--primary);
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
-}
+        /* Profile Image */
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 2rem auto;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-a:not(.nav-logo):not(.nav-links a):not(.hero a)::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    bottom: -2px;
-    left: 0;
-    background-color: var(--primary);
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease;
-}
+        /* Footer */
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+        }
 
-a:not(.nav-logo):not(.nav-links a):not(.hero a):hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
 
-/* Sections */
-.section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1.2s ease, transform 1.2s ease;
-    padding: 6rem 2rem;
-}
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .footer-credit {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
 
-.section-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
+        .footer-credit a {
+            text-decoration: none;
+        }
 
-h2 {
-    font-family: 'Lora', serif;
-    color: var(--primary);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
+        .footer-credit a:hover {
+            text-decoration: underline;
+        }
 
-h3 {
-    color: var(--primary);
-    font-size: 1.5rem;
-    margin: 1.5rem 0 1rem;
-}
+        /* Card Styles */
+        .section {
+            padding: 2rem 0;
+        }
 
-/* Booking Notice */
-.notice {
-    background: #fff3e0;
-    border: 1px solid #ffe0b2;
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-.booking-frame {
-    height: 100vh;
-    width: 100%;
-    margin-top: 2rem;
-}
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #333;
+        }
 
-/* FAQ Section */
-.faq-item {
-    margin-bottom: 2.5rem;
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
 
-.faq-question {
-    font-family: 'Lora', serif;
-    color: var(--primary);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
+        .card h2, .card h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
 
-/* Lists */
-ul {
-    list-style-position: inside;
-    margin: 1rem 0;
-}
+        /* Section Headings */
+        .heading-xl {
+            font-size: 2.5rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
 
-li {
-    margin-bottom: 0.5rem;
-}
+        /* Notice Box */
+        .notice {
+            background: antiquewhite;
+            border: 2px groove #000;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 0.75rem;
+            color: #333;
+        }
 
-/* Emergency Services */
-.emergency-services {
-    background: #f8f9fa;  /* Light gray background instead of green */
-    padding: 2rem;
-    border-radius: 8px;
-    margin-top: 1.5rem;
-    border: 1px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
+        /* Chevron Animation */
+        .bounce {
+            animation: bounce 2s infinite;
+            display: inline-block;
+        }
 
-.emergency-services ul {
-    list-style: none;
-}
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
 
-.emergency-services li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #e9ecef;
-}
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
 
-.emergency-services li:last-child {
-    border-bottom: none;
-}
+            .nav-links.active {
+                display: flex;
+            }
 
-.emergency-services a {
-    color: var(--primary);
-    font-weight: 500;
-}
+            .mobile-menu-btn {
+                display: block;
+            }
 
-.emergency-services a:hover {
-    text-decoration: underline;
-}
-
-a[href^="tel"] {
-    font-weight: 600;
-    padding: 0.2rem 0.5rem;
-    background-color: var(--primary-light);
-    border-radius: 4px;
-    margin-right: 0.5rem;
-}
-
-a[href^="tel"]:hover {
-    background-color: var(--primary);
-    color: var(--white);
-}
-
-a[href^="tel"]::after {
-    display: none;
-}
-
-/* Footer */
-footer {
-    background: var(--primary);
-    color: var(--white);
-    padding: 3rem 2rem;
-    text-align: center;
-}
-
-footer a {
-    color: var(--white);
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Animations */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-}
-
-.bounce {
-    animation: bounce 2s infinite;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        padding: 1rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .section-container {
-        padding: 0 1rem;
-    }
-}
+            .section-container {
+                padding: 0 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Header/Navigation -->
+    <header class="header">
         <div class="nav-container">
             <a href="#" class="nav-logo">Flexible Psyche</a>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
             </button>
-            <div class="nav-links">
+            <nav class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#booking">Booking</a>
                 <a href="#faq">FAQ</a>
-            </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-up">
             <h1>Rosalie Poesiat</h1>
             <p>Clinical Psychologist</p>
-            <a href="#about" aria-label="Scroll to about section">
-                <i class="fas fa-chevron-down fa-2x" style="color: var(--primary); animation: bounce 2s infinite;"></i>
+            <a href="#about" aria-label="Scroll to about section" class="bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
             </a>
         </div>
     </section>
 
-    <section id="about" class="section about">
+    <!-- About Section -->
+    <section id="about" class="section">
         <div class="section-container">
-            <img src="assets/profile.webp" alt="Rosalie Poesiat" class="profile-img">
+            <img src="assets/profile.webp" alt="Rosalie Poesiat" class="profile-img" data-aos="fade-up">
+            
             <div class="about-content">
-                <p>As a fully registered psychologist since 2014, I have worked with people across the lifespan within hospital, community, and education settings.</p>
-                <br>
-                <p>My practice has been heavily influenced by providing sensitive interventions to those whose quality of life has been impacted by significant injury, physical trauma, or ongoing degenerative or pervasive/long term and chronic medical conditions.</p>
-                <br>
-                <p>I enjoy working with any person who has an interest in enhancing their quality of life, and pursuing values informed changes.</p>
-                <br>
-                <p>It is my belief that when we work closely to align our behaviour with what is most important to us in our lives, we can live the most meaningful life possible.</p>
-                <br>
-                <h3>Therapeutic Approach:</h3>
-                <ul>
-                    <li>Acceptance and Commitment Therapy</li>
-                    <li>Schema Therapy</li>
-                    <li>Emotion-focussed Therapy</li>
-                    <li>Compassion-focussed Therapy</li>
-                    <li>Cognitive Behaviour Therapy</li>
-                </ul>
-                <br>
-                <p>I believe that all people have the capacity to heal and bring meaning to their lives, despite the many hardships that they may have faced</p>
-                <br>
-                <h3>Guiding principles and theories:</h3>
-                <ul>
-                    <li>Person-centred therapy</li>
-                    <li>Humanistic psychology</li>
-                    <li>Values-based intervention</li>
-                    <li>Trauma-informed practice</li>
-                </ul>
-                <br>
-                <p>I work with clients to identify their needs and provide psychological knowledge, theory, and practices to assist them in taking the steps to enhance their quality of life.</p>
-                <br>
-                <p>My therapeutic focus is addressing the root causes of distress, instead of managing symptoms (which is the focus of typical CBT interventions). I utilise a range of CBT techniques, as appropriate, or where my client requests or prefers this approach, however my focus is on healing the systemic causes of suffering in a client's life.</p>
+                <!-- Introduction Card -->
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <p>As a fully registered psychologist since 2014, I have worked with people across the lifespan within hospital, community, and education settings.</p>
+                    <br>
+                    <p>My practice has been heavily influenced by providing sensitive interventions to those whose quality of life has been impacted by significant injury, physical trauma, or ongoing degenerative or pervasive/long term and chronic medical conditions.</p>
+                    <br>
+                    <p>I enjoy working with any person who has an interest in enhancing their quality of life, and pursuing values informed changes.</p>
+                    <br>
+                    <p>It is my belief that when we work closely to align our behaviour with what is most important to us in our lives, we can live the most meaningful life possible.</p>
+                </div>
+
+                <!-- Approaches Card -->
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Therapeutic Approach:</h3>
+                    <ul>
+                        <li>Acceptance and Commitment Therapy</li>
+                        <li>Schema Therapy</li>
+                        <li>Emotion-focussed Therapy</li>
+                        <li>Compassion-focussed Therapy</li>
+                        <li>Cognitive Behaviour Therapy</li>
+                    </ul>
+                    <br>
+                    <h3>Guiding principles and theories:</h3>
+                    <ul>
+                        <li>Person-centred therapy</li>
+                        <li>Humanistic psychology</li>
+                        <li>Values-based intervention</li>
+                        <li>Trauma-informed practice</li>
+                    </ul>
+                    <br>
+                    <p>I believe that all people have the capacity to heal and bring meaning to their lives, despite the many hardships that they may have faced</p>
+                </div>
+
+                <!-- Philosophy Card -->
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <p>I work with clients to identify their needs and provide psychological knowledge, theory, and practices to assist them in taking the steps to enhance their quality of life.</p>
+                    <br>
+                    <p>My therapeutic focus is addressing the root causes of distress, instead of managing symptoms (which is the focus of typical CBT interventions). I utilise a range of CBT techniques, as appropriate, or where my client requests or prefers this approach, however my focus is on healing the systemic causes of suffering in a client's life.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Booking Section -->
     <section id="booking" class="section">
         <div class="section-container">
-            <div class="notice">
+            <div class="notice" data-aos="fade-up">
                 <p>I have current availability for new clients - you can book using the portal.</p>
-                <br>
-                <p>Please note, payment is deducted upon booking an appointment through this portal. Subsequent sessions can be scheduled directly with me as needed. The Medicare rebate will be accessible upon attendance of a session and with a valid mental health treatment plan.</p>
+                <p>Please note, payment is deducted upon booking an appointment through this portal.</p>
             </div>
-            <div class="booking-frame">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
                 <iframe src="https://www.halaxy.com/book/widget/psychologist/ms-rosalie-poesiat/911351/983931" style="border:0;width:100%;height:100vh;"></iframe>
             </div>
         </div>
     </section>
 
+    <!-- FAQ Section -->
     <section id="faq" class="section">
         <div class="section-container">
-            <h2>Frequently Asked Questions</h2>
+            <h2 class="heading-xl" data-aos="fade-up">Frequently Asked Questions</h2>
 
-            <div class="faq-item">
-                <h3 class="faq-question">How much does a session cost?</h3>
+            <div class="card" data-aos="fade-up">
+                <h3>How much does a session cost?</h3>
                 <p>Session pricing is based on the recommended rate provided by the Australian Psychological Society. The current session rate is recommended to be $300 for a 40-60 minute session.</p>
                 <br>
                 <p>My fee from the 1st of July, 2024, will be $290 per 40-60 minute consultation, with a rebate of $137.05 (this will also increase in July).</p>
             </div>
 
-            <div class="faq-item">
-                <h3 class="faq-question">How do Medicare rebates work?</h3>
+            <div class="card" data-aos="fade-up">
+                <h3>How do Medicare rebates work?</h3>
                 <p>In order to receive a Medicare rebate, your GP must have completed a valid Mental Health Treatment Plan. This plan must be provided prior to, or during, your first session, in order for you to receive the rebate. Medicare rebates are processed after your session.</p>
                 <br>
                 <p>The current Medicare rebate for a session is $137.05. This is the amount that will be returned to your bank account, after your rebate is processed.</p>
             </div>
 
-            <div class="faq-item">
-                <h3 class="faq-question">Current unavailable referrals:</h3>
+            <div class="card" data-aos="fade-up">
+                <h3>Current unavailable referrals:</h3>
                 <ul>
                     <li>NDIS clients (except for self-managed)</li>
                     <li>DVA white card holders</li>
@@ -458,23 +395,23 @@ footer a:hover {
                 </ul>
             </div>
 
-            <div class="faq-item">
-                <h3 class="faq-question">How do I make an appointment?</h3>
+            <div class="card" data-aos="fade-up">
+                <h3>How do I make an appointment?</h3>
                 <p>Appointments are made through the portal above. This is my preferred method of booking, as I have limited time to book appointments outside of my direct work hours.</p>
             </div>
 
-            <div class="faq-item">
-                <h3 class="faq-question">Where is the practice located?</h3>
+            <div class="card" data-aos="fade-up">
+                <h3>Where is the practice located?</h3>
                 <p>Flexible Psyche is located in the Lantern Psychology Centre, Unit 3, 6 Geils Court in Deakin. There is free and paid parking available in the streets and car park surrounding the consulting rooms. Make sure to arrive with ample time to find parking, as it can be limited during the day.</p>
             </div>
 
-            <div class="faq-item">
-                <h3 class="faq-question">How is information stored?</h3>
+            <div class="card" data-aos="fade-up">
+                <h3>How is information stored?</h3>
                 <p>I maintain client information using a digital practice management system called Halaxy. This system is encrypted and provides bank-level security of your information. Please see this <a href="https://www.lanternpsychology.com.au/privacy-policy-2/" target="_blank">privacy policy</a> for more information on how your records are stored and kept.</p>
             </div>
 
-            <div class="faq-item">
-                <h3 class="faq-question">What can I expect from my first session (and subsequent sessions)?</h3>
+            <div class="card" data-aos="fade-up">
+                <h3>What can I expect from my first session (and subsequent sessions)?</h3>
                 <p>Your first session will need to cover the legal aspects of working with a psychologist:</p>
                 <ul>
                     <li>Informed consent</li>
@@ -495,32 +432,29 @@ footer a:hover {
                 </ul>
             </div>
 
-            <div class="faq-item">
-                <h3 class="faq-question">What type of services are offered?</h3>
+            <div class="card" data-aos="fade-up">
+                <h3>What type of services are offered?</h3>
                 <p>Psychological therapy is the only service offered at this time. I am not currently able to complete cognitive, personality, achievement, or psychological testing. I do not write diagnostic reports for medico legal purposes.</p>
                 <br>
                 <p>I am not able to offer urgent or crisis support. If you need immediate support, please consider contacting one of the following services:</p>
-                
-                <div class="emergency-services">
-                    <ul>
-                        <li>Lifeline Canberra: <a href="tel:131114">13 11 14</a> or <a href="http://www.lifelinecanberra.org.au" target="_blank">www.lifelinecanberra.org.au</a></li>
-                        <li>Beyond Blue: <a href="tel:1300224636">1300 224 636</a> or <a href="http://www.beyondblue.org.au" target="_blank">www.beyondblue.org.au</a></li>
-                        <li>Suicide Call Back Service: <a href="tel:1300659467">1300 659 467</a></li>
-                        <li>National Sexual Assault, Domestic Family Violence Counselling Service: <a href="tel:1300364277">1300 364 277</a></li>
-                        <li>MensLine Australia: <a href="tel:1300789978">1300 789 978</a></li>
-                        <li>Kid's Helpline: <a href="tel:1800551800">1800 551 800</a></li>
-                        <li>Head to Health: <a href="http://www.headtohealth.gov.au" target="_blank">www.headtohealth.gov.au</a></li>
-                    </ul>
-                </div>
+                <ul>
+                    <li>Lifeline Canberra: <a href="tel:131114">13 11 14</a> or <a href="http://www.lifelinecanberra.org.au" target="_blank">www.lifelinecanberra.org.au</a></li>
+                    <li>Beyond Blue: <a href="tel:1300224636">1300 224 636</a> or <a href="http://www.beyondblue.org.au" target="_blank">www.beyondblue.org.au</a></li>
+                    <li>Suicide Call Back Service: <a href="tel:1300659467">1300 659 467</a></li>
+                    <li>National Sexual Assault, Domestic Family Violence Counselling Service: <a href="tel:1300364277">1300 364 277</a></li>
+                    <li>MensLine Australia: <a href="tel:1300789978">1300 789 978</a></li>
+                    <li>Kid's Helpline: <a href="tel:1800551800">1800 551 800</a></li>
+                    <li>Head to Health: <a href="http://www.headtohealth.gov.au" target="_blank">www.headtohealth.gov.au</a></li>
+                </ul>
             </div>
 
-            <div class="faq-item">
-                <h3 class="faq-question">Session cancellations</h3>
+            <div class="card" data-aos="fade-up">
+                <h3>Session cancellations</h3>
                 <p>Please provide as much notice as possible prior to cancelling or rescheduling sessions. Illness is not a predictable circumstance, and it is understandable that you may need to reschedule on the same day as your appointment. Cancellations or reschedules requested less than 2 business days before the appointment may incur a cancellation fee, as I am unable to book another client into your session slot.</p>
             </div>
 
-            <div class="faq-item">
-                <h3 class="faq-question">Opening hours</h3>
+            <div class="card" data-aos="fade-up">
+                <h3>Opening hours</h3>
                 <ul>
                     <li>Monday 10AM-3PM</li>
                     <li>Tuesday 10AM-3PM</li>
@@ -529,51 +463,85 @@ footer a:hover {
                 </ul>
             </div>
 
-            <div class="faq-item">
-                <h3 class="faq-question">Contact details</h3>
+            <div class="card" data-aos="fade-up">
+                <h3>Contact details</h3>
                 <p>You can contact me via email at <a href="mailto:flexiblepsyche@gmail.com">flexiblepsyche@gmail.com</a></p>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="section-container">
             <p>Flexible Psyche | Canberra Clinical Psychologist</p>
             <p>Unit 3, 6 Geils Court, Deakin, 2600</p>
             <p><a href="mailto:flexiblepsyche@gmail.com">flexiblepsyche@gmail.com</a></p>
+            <p class="footer-credit">Site by <a href="https://pendulumpsychology.com.au" target="_blank">David O'Donohue</a></p>
         </div>
     </footer>
 
+    <!-- AOS Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
+            });
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+            // Mobile Navigation Toggle
+            const navToggle = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
 
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+            navToggle.addEventListener('click', function() {
+                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', !isExpanded);
+                navLinks.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
                 }
             });
-        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.section, .hero-content').forEach((element) => {
-            observer.observe(element);
-        });
-
-        // Smooth scroll behavior for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerOffset = 64;
+                        const elementPosition = target.offsetTop;
+                        window.scrollTo({
+                            top: elementPosition - headerOffset,
+                            behavior: 'smooth'
+                        });
+                    }
+                    // Close mobile menu after clicking
+                    navLinks.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
                 });
             });
+
+            // Scroll progress indicator
+            const progressBar = document.querySelector('.scroll-progress');
+
+            function updateProgress() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrolled = window.scrollY;
+                const progress = (scrolled / (documentHeight - windowHeight)) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+
+            window.addEventListener('scroll', updateProgress);
+            updateProgress(); // Initial call
         });
     </script>
 </body>
